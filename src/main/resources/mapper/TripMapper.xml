@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.js.jlog_backend.repository.trip.TripMapper">
+
+    <insert id="addTrip" parameterType="com.js.jlog_backend.dto.trip.TripRequestDto">
+        INSERT INTO trip (
+            COUNTRY, CITY, AIRLINE, AIRPORT, PRICE, DEPARTURE_DTTM, ARRIVE_DTTM
+        )
+        VALUES(
+            #{country}
+            ,#{city}
+            ,#{airline}
+            ,#{airport}
+            ,#{price}
+            ,#{departureDttm}
+            ,#{arriveDttm}
+--             ,TO_TIMESTAMP(#{departureDttm}, 'YYYY-MM-DD HH24:MI:SS')
+--             ,TO_TIMESTAMP(#{arriveDttm}, 'YYYY-MM-DD HH24:MI:SS')
+        )
+    </insert>
+
+</mapper>
